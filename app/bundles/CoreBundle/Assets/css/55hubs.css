@@ -1,9 +1,11 @@
 .mautic-brand {
   padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 
 .sidebar-header {
-  background-color: #009BA0 !important;
+    background-color: #009BA0 !important;
+    height: 65px !important;
 }
 
 .loading-bar:after, .canvas-loading-bar:after, .modal-loading-bar:after, .loading-bar:before, .canvas-loading-bar:before, .modal-loading-bar:before {
