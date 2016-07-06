@@ -15,3 +15,11 @@
 .loading-bar, .canvas-loading-bar, .modal-loading-bar {
       background-color: #e6a83d !important;
 }
+
+.body-login {
+    background-color: white;
+}
+
+.panel-body {
+    background-color: #F2F2F2;
+}
