@@ -12,7 +12,7 @@
 <!-- start: sidebar-header -->
 <div class="sidebar-header">
     <!-- brand -->
-    <a class="mautic-brand" href="#">
+    <a class="mautic-brand" href="/">
         <svg class="hubs-logo" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              viewBox="0 0 115.3 39.9" style="enable-background:new 0 0 115.3 39.9;" xml:space="preserve">
             <style type="text/css">
