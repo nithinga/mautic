@@ -32,7 +32,7 @@
                             <svg class="hubs-logo" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 115.3 39.9" style="enable-background:new 0 0 115.3 39.9;" xml:space="preserve">
             <style type="text/css">
-                .st0{fill:#FFFFFF;}
+                .st0{fill:#F2F2F2;}
             </style>
                                 <path class="st0" d="M20,39.9c-11,0-20-9-20-20h1C1,30.4,9.5,38.9,20,38.9c10.4,0,18.9-8.5,18.9-18.9S30.4,1,20,1V0c11,0,20,9,20,20
 	C39.9,31,31,39.9,20,39.9z"/>
