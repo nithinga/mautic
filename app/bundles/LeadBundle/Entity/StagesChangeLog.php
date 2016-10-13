@@ -1,9 +1,10 @@
 <?php
 /**
- * @package     Mautic
- * @copyright   2014 Mautic Contributors. All rights reserved.
+ * @copyright   2014 Mautic Contributors. All rights reserved
  * @author      Mautic
+ *
  * @link        http://mautic.org
+ *
  * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
@@ -11,11 +12,10 @@ namespace Mautic\LeadBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Mautic\CoreBundle\Doctrine\Mapping\ClassMetadataBuilder;
+use Mautic\StageBundle\Entity\Stage;
 
 /**
- * Class StagesChangeLog
- *
- * @package Mautic\LeadBundle\Entity
+ * Class StagesChangeLog.
  */
 class StagesChangeLog
 {
@@ -29,6 +29,10 @@ class StagesChangeLog
      */
     private $lead;
 
+    /**
+     * @var Stage
+     */
+    private $stage;
 
     /**
      * @var string
@@ -39,7 +43,6 @@ class StagesChangeLog
      * @var string
      */
     private $actionName;
-    
 
     /**
      * @var \DateTime
@@ -49,7 +52,7 @@ class StagesChangeLog
     /**
      * @param ORM\ClassMetadata $metadata
      */
-    public static function loadMetadata (ORM\ClassMetadata $metadata)
+    public static function loadMetadata(ORM\ClassMetadata $metadata)
     {
         $builder = new ClassMetadataBuilder($metadata);
 
@@ -67,15 +70,19 @@ class StagesChangeLog
         $builder->createField('actionName', 'string')
             ->columnName('action_name')
             ->build();
-        
+
+        $builder->createManyToOne('stage', 'Mautic\StageBundle\Entity\Stage')
+            ->inversedBy('stageChangeLog')
+            ->addJoinColumn('stage_id', 'id', true, false, 'CASCADE')
+            ->build();
 
         $builder->addDateAdded();
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -83,9 +90,10 @@ class StagesChangeLog
     }
 
     /**
-     * Set eventName
+     * Set eventName.
      *
      * @param string $eventName
+     *
      * @return StagesChangeLog
      */
     public function setEventName($eventName)
@@ -96,7 +104,7 @@ class StagesChangeLog
     }
 
     /**
-     * Get eventName
+     * Get eventName.
      *
      * @return string
      */
@@ -106,9 +114,10 @@ class StagesChangeLog
     }
 
     /**
-     * Set actionName
+     * Set actionName.
      *
      * @param string $actionName
+     *
      * @return StagesChangeLog
      */
     public function setActionName($actionName)
@@ -119,7 +128,7 @@ class StagesChangeLog
     }
 
     /**
-     * Get actionName
+     * Get actionName.
      *
      * @return string
      */
@@ -129,9 +138,10 @@ class StagesChangeLog
     }
 
     /**
-     * Set dateAdded
+     * Set dateAdded.
      *
      * @param \DateTime $dateAdded
+     *
      * @return StagesChangeLog
      */
     public function setDateAdded($dateAdded)
@@ -142,7 +152,7 @@ class StagesChangeLog
     }
 
     /**
-     * Get dateAdded
+     * Get dateAdded.
      *
      * @return \DateTime
      */
@@ -152,9 +162,10 @@ class StagesChangeLog
     }
 
     /**
-     * Set lead
+     * Set lead.
      *
      * @param \Mautic\LeadBundle\Entity\Lead $lead
+     *
      * @return StagesChangeLog
      */
     public function setLead(\Mautic\LeadBundle\Entity\Lead $lead)
@@ -165,12 +176,36 @@ class StagesChangeLog
     }
 
     /**
-     * Get lead
+     * Get lead.
      *
      * @return \Mautic\LeadBundle\Entity\Lead
      */
     public function getLead()
     {
         return $this->lead;
+    }
+
+    /**
+     * Set stage.
+     *
+     * @param \Mautic\StageBundle\Entity\Stage $stage
+     *
+     * @return StagesChangeLog
+     */
+    public function setStage(\Mautic\StageBundle\Entity\Stage $stage)
+    {
+        $this->stage = $stage;
+
+        return $this;
+    }
+
+    /**
+     * Get stage.
+     *
+     * @return \Mautic\StageBundle\Entity\Stage
+     */
+    public function getStage()
+    {
+        return $this->stage;
     }
 }
